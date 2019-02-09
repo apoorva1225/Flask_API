@@ -1,0 +1,31 @@
+{
+	"users":[
+		{
+			"id":"001",
+			"name":"user1"
+		}, 
+		{
+			"id":"002",
+			"name":"user2"
+		},  
+		{
+			"id":"003",
+			"name":"user3"
+		}
+	],
+
+	"clients":[
+		{
+			"id":"C001",
+			"name":"client1"
+		}, 
+		{
+			"id":"C002",
+			"name":"client2"
+		},  
+		{
+			"id":"C003",
+			"name":"client3"
+		}
+	]
+}
