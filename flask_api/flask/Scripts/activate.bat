@@ -1,5 +1,5 @@
 @echo off
-set "VIRTUAL_ENV=C:\Users\apoor\myproject\flask"
+set "VIRTUAL_ENV=C:\Users\apoor\apoorva_git_repo\flask_api\flask"
 
 if defined _OLD_VIRTUAL_PROMPT (
     set "PROMPT=%_OLD_VIRTUAL_PROMPT%"

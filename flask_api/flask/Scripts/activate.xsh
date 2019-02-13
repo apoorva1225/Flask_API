@@ -25,7 +25,7 @@ def _deactivate(args):
 _deactivate(["nondestructive"])
 aliases["deactivate"] = _deactivate
 
-$VIRTUAL_ENV = r"C:\Users\apoor\myproject\flask"
+$VIRTUAL_ENV = r"C:\Users\apoor\apoorva_git_repo\flask_api\flask"
 
 $_OLD_VIRTUAL_PATH = $PATH
 $PATH = $PATH[:]

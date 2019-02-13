@@ -57,60 +57,60 @@ def post_users():
 
 
 
-@app.route('/users/<string:num>', methods=['GET', 'PUT', 'DELETE'])
-
-def user_select(num):
-	data = {}
-	data['users'] = []
-	user_item = {}
-	for item in json_data['users']:
-		user_item = {'id': item['id'], 'name': item['name']}
-		data['users'].append(user_item)
-
-	user_present = False;
-	for user in data['users']:
-		print(num, user['id'], str(num))
-		if(user['id'] == str(num)):
-			user_present = True;
-			break
-		else:
-			user_present = False;
-
-	if (request.method == 'GET'):
-		if(user_present):
-			for user in data['users']:
-				if(user['id'] == str(num)):
-					return jsonify(user)
-					break
-		else:
-			strg = 'User not found.'
-			return strg
-	elif(request.method == 'PUT'):
-		some_json = request.get_json()
-
-		if(user_present):
-			for user in data['users']:
-				if(user['id'] == str(num)):
-					data['users'].remove(user)
-					data['users'].append(some_json)
-					return jsonify(data)
-					break
-		else:
-			strg = 'User not found'
-			return strg
-	elif(request.method == 'DELETE'):
-		if(user_present):
-			for item in json_data['users']:
-				if(item['id'] == str(num)):
-					data['users'].remove(user)
-					return jsonify(data)
-					break
-		else:
-			strg = 'User not found'
-			return strg
-	else:
-		strg = 'invalid request'
-		return strg
+#@app.route('/users/<string:num>', methods=['GET', 'PUT', 'DELETE'])
+#
+#def user_select(num):
+#	data = {}
+#	data['users'] = []
+#	user_item = {}
+#	for item in json_data['users']:
+#		user_item = {'id': item['id'], 'name': item['name']}
+#		data['users'].append(user_item)
+#
+#	user_present = False;
+#	for user in data['users']:
+#		print(num, user['id'], str(num))
+#		if(user['id'] == str(num)):
+#			user_present = True;
+#			break
+#		else:
+#			user_present = False;
+#
+#	if (request.method == 'GET'):
+#		if(user_present):
+#			for user in data['users']:
+#				if(user['id'] == str(num)):
+#					return jsonify(user)
+#					break
+#		else:
+#			strg = 'User not found.'
+#			return strg
+#	elif(request.method == 'PUT'):
+#		some_json = request.get_json()
+#
+#		if(user_present):
+#			for user in data['users']:
+#				if(user['id'] == str(num)):
+#					data['users'].remove(user)
+#					data['users'].append(some_json)
+#					return jsonify(data)
+#					break
+#		else:
+#			strg = 'User not found'
+#			return strg
+#	elif(request.method == 'DELETE'):
+#		if(user_present):
+#			for item in json_data['users']:
+#				if(item['id'] == str(num)):
+#					data['users'].remove(user)
+#					return jsonify(data)
+#					break
+#		else:
+#			strg = 'User not found'
+#			return strg
+#	else:
+#		strg = 'invalid request'
+#		return strg
 
 if __name__ == '__main__':
 	app.run(debug=True,port=3000)

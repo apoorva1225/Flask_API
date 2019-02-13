@@ -8,23 +8,31 @@ post_call_input = {
       "name": "vidushi"
     }
 
-response = requests.get(api_endpoint1)
-response_post = requests.post(api_endpoint2, data=post_call_input)
+try:
+	response = requests.get(api_endpoint1)
 
-print("\nGET Call Results")
-if(response.status_code == 200):
-	print("Request Successful !", response.status_code)
-	print(response.text)
-else:
-	print("Request Unsuccessful! status code:", response.status_code)
-	print(response.text)
+	print("\nGET Call Results")
+	if(response.status_code == 200):
+		print("Request Successful !", response.status_code)
+		print(response.text)
+	else:
+		print("Request Unsuccessful! status code:", response.status_code)
+		print(response.text)
+except:
+	print("api get call failed")
 
-print("\nPOST Call Results")
-if(response_post.status_code == 200):
-	print("Request Successful !", response_post.status_code)
-	print(response_post.text)
-else:
-	print("Request Unsuccessful! status code:", response_post.status_code)
-	print(response_post.text)
+try:
+	response_post = requests.post(api_endpoint2, data=post_call_input)
+
+	print("\nPOST Call Results")
+	if(response_post.status_code == 200):
+		print("Request Successful !", response_post.status_code)
+		print(response_post.text)
+	else:
+		print("Request Unsuccessful! status code:", response_post.status_code)
+		print(response_post.text)
+except:
+	print("api post call failed")
+
 
 
