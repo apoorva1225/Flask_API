@@ -4,8 +4,8 @@ api_endpoint1 = 'http://localhost:54199/api/test/testHitGet'
 api_endpoint2 = 'http://localhost:54199/api/test/testHitPost'
 
 post_call_input = {
-      "id": "003", 
-      "name": "vidushi"
+      'id': '004', 
+      'name': 'vidushi'
     }
 
 try:
@@ -22,7 +22,7 @@ except:
 	print("api get call failed")
 
 try:
-	response_post = requests.post(api_endpoint2, data=post_call_input)
+	response_post = requests.post(api_endpoint2, data=json.dumps(post_call_input), headers = {'content-type':'application/json'})
 
 	print("\nPOST Call Results")
 	if(response_post.status_code == 200):
